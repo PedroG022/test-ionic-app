@@ -1,17 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-col>
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let fruta of testeService.getFrutas()" >
+            {{fruta}}
+          </ion-item>
+        </ion-list>
+      
+        <div class="text-input-layout">
+          <ion-item>
+            <ion-label position="floating">Inserir texto</ion-label>
+            <ion-input placeholder="Texto" [(ngModel)] = "fruta"></ion-input>
+          </ion-item>
+        </div>
+      
+        <ion-button class="btn" expand="block" (click)="testeService.add(fruta)">
+          Adicionar à lista
+        </ion-button>
+      </ion-card-content>
+      <p>
+        Add items to a list using a service
+      </p>
+    </ion-card>
+  </ion-col>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-button class="btn2" expand="block" [routerLink]="['page/', fruta]">
+    Ir para página 2
+  </ion-button>
+
 </ion-content>

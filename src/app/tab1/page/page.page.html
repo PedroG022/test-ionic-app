@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Página 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>
+    {{texto}}
+  </p>
+  <p>
+    O texto acima foi recebido do campo 'inserir texto' da página anterior
+  </p>
+  <p>
+    O conteúdo abaixo foi obtido usando uma API REST
+  </p>
+
+  <ion-list>
+    <ion-item *ngFor="let car of cars" >
+      <ion-label>
+        {{car.Name}}
+      </ion-label>
+      <ion-badge>
+        <ion-label>
+          {{car.Origin}}
+        </ion-label>
+      </ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

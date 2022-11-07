@@ -1,3 +1,4 @@
+import { TesteService } from './../services/teste.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  public fruta: string;
 
-  constructor() {}
-
+  constructor(public testeService: TesteService) {}
 }

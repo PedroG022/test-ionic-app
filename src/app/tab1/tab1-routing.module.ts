@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'page/:texto',
+    loadChildren: () => import('./page/page.module').then( m => m.PagePageModule)
   }
 ];
 
